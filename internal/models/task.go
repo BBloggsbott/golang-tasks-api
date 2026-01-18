@@ -17,7 +17,7 @@ const (
 
 type Task struct {
 	ID          int64          `json:"id"`
-	Title       int64          `json:"title"`
+	Title       string         `json:"title"`
 	Description sql.NullString `json:"description"`
 	Status      TaskStatus     `json:"status"`
 	Priority    int            `json:"priority"`

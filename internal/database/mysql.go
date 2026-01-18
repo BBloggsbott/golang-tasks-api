@@ -15,8 +15,12 @@ func NewMySQLDB(cfg config.DatabaseConfig) (*sql.DB, error) {
 	mysql_cfg.User = cfg.User
 	mysql_cfg.Passwd = cfg.Password
 	mysql_cfg.Net = "tcp"
-	mysql_cfg.Addr = fmt.Sprintf("%q:%q", cfg.Host, cfg.Port)
+	mysql_cfg.Addr = fmt.Sprintf("%s:%s", cfg.Host, cfg.Port)
 	mysql_cfg.DBName = cfg.Database
+	mysql_cfg.ParseTime = true
+	mysql_cfg.Params = map[string]string{
+		"charset": "utf8mb4",
+	}
 
 	db, err := sql.Open("mysql", mysql_cfg.FormatDSN())
 	if err != nil {

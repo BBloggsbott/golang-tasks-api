@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  title: openapi-tasks-api
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      summary: Health Check
+      operationId: Health Check
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+  /api/v1/tasks:
+    post:
+      summary: Create Task
+      operationId: Create Task
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          example: application/json
+      requestBody:
+        $ref: '#/components/requestBodies/create_task'
+    get:
+      summary: Get all tasks
+      operationId: Get all tasks
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+  /api/v1/tasks/1:
+    get:
+      summary: Get One task
+      operationId: Get One task
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+    put:
+      summary: Update task
+      operationId: Update task
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          example: application/json
+      requestBody:
+        $ref: '#/components/requestBodies/update_task'
+    delete:
+      summary: Delete task
+      operationId: Delete task
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+servers:
+  - url: http://localhost:8080
+components:
+  schemas:
+    create_task:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        priority:
+          type: number
+    update_task:
+      type: object
+      properties:
+        status:
+          type: string
+  requestBodies:
+    create_task:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/create_task'
+      description: ''
+      required: true
+    update_task:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/update_task'
+      description: ''
+      required: true
+  securitySchemes: {}
