@@ -6,7 +6,7 @@ A Golang Learning Exercise
 
 - **Language:** Go 1.25
 - **Web Framework:** Gin
-- **Database:** MySQL 8.0
+- **Database:** MySQL 9.5
 - **Driver:** go-sql-driver/mysql
 - **Configuration:** godotenv
 - **Containerization:** Docker & Docker Compose
